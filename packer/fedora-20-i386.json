@@ -24,7 +24,19 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "512"
+          "2048"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vtxvpid",
+          "off"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--hwvirtex",
+          "off"
         ],
         [
           "modifyvm",
@@ -65,7 +77,7 @@
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/opscode_fedora-20-i386_chef-{{user `chef_version`}}.box",
+      "output": "../builds/{{.Provider}}/opscode_fedora-20-i386_chef-{{user `chef_version`}}_gui.box",
       "type": "vagrant"
     }
   ],
@@ -80,8 +92,7 @@
         "scripts/common/vmtools.sh",
         "scripts/common/chef.sh",
         "scripts/common/vagrant.sh",
-        "scripts/fedora/cleanup.sh",
-        "scripts/common/minimize.sh"
+        "scripts/fedora/cleanup.sh"
       ],
       "type": "shell"
     }
