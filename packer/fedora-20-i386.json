@@ -77,7 +77,7 @@
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/opscode_fedora-20-i386_chef-{{user `chef_version`}}_gui.box",
+      "output": "../builds/{{.Provider}}/fedora-20-i386-gnome.box",
       "type": "vagrant"
     }
   ],
